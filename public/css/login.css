@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #346795 0%, #1A3168 100%) 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 50%;
+    text-align: center;
+}
+.login-and-registration
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50vh;
+    background: #302618 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 6px #00000029;
+}
+.registration
+{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+button {
+    background: #302618 0% 0% no-repeat padding-box;
+    border: 2px solid #B7A677;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 30%;
+    color: #B7A677;
+    margin: 1em;
+    line-height: 2.5em;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #B7A677;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    * {
+        font-size: 30px;
+    }
+    
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+    .login-and-registration
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-container {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    form.login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 40vh;
+        background: #302618 0% 0% no-repeat padding-box;
+        box-shadow: 0px 6px 6px #00000029;
+    }
+    .registration
+    {
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    button {
+        background: #302618 0% 0% no-repeat padding-box;
+        border: 2px solid #B7A677;
+        box-shadow: 0px 3px 6px #00000029;
+        width: 30%;
+        color: #B7A677;
+        margin: 1em;
+        line-height: 2.5em;
+    }
+    
+    input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #B7A677;
+        padding: 1em;
+        margin: 1em;
+        width: 50%;
+    }
+    img {
+        height: 21em;
+        margin: 6em;
+    }
+}
