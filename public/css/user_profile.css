@@ -1,0 +1,543 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+body {
+  background: whitesmoke;
+  margin: 0;
+  font-family: 'Playfair Display';
+}
+
+.base-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.base-container .navbar {
+  width: 100%;
+  background: transparent -webkit-gradient(linear, left top, left bottom, from(#346795), to(#1A3168)) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #346795 0%, #1A3168 100%) 0% 0% no-repeat padding-box;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.base-container .navbar .add-project {
+  background: #302618 0% 0% no-repeat padding-box;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  margin-top: 2em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 1.5em;
+  color: #B7A677;
+  letter-spacing: 0.1em;
+  text-align: center;
+  width: 80%;
+  cursor: pointer;
+}
+
+.base-container .navbar .add-project > i {
+  padding: 1em 1em;
+}
+
+.base-container .navbar .logo {
+  width: 200px;
+  margin: 2em auto;
+}
+
+.base-container .navbar ul {
+  list-style-type: none;
+  font: normal normal normal 20px/27px TimesNewRoman;
+  letter-spacing: 0.72px;
+  color: whitesmoke;
+  height: 100%;
+  width: calc(100% - 40px);
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.base-container .navbar ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: left;
+  color: whitesmoke;
+  margin-bottom: 1em;
+}
+
+.base-container .navbar ul li i {
+  font-size: 1.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 15%;
+}
+
+.base-container .navbar ul li a {
+  text-decoration: none;
+  display: inline-block;
+  line-height: 2em;
+}
+
+.base-container .navbar ul li .button {
+  border-bottom: 1px solid whitesmoke;
+  letter-spacing: 0.72px;
+  color: whitesmoke;
+  padding: 0.2rem;
+  width: 100%;
+}
+
+.base-container main .background {
+  background-color: #B7A677;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: auto;
+}
+
+.base-container main .background .inner-background {
+  background-color: whitesmoke;
+  width: 95%;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.base-container main .background .inner-background .picture-and-description {
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.base-container main .background .inner-background .picture-and-description img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  border: 8px solid #302618;
+}
+
+.base-container main .background .inner-background .picture-and-description .opis {
+  background-color: #302618;
+  color: #B7A677;
+  text-align: center;
+  padding: 1em;
+  width: 50%;
+}
+
+.base-container main .background .inner-background .picture-and-description .opis .nick {
+  font-size: larger;
+  font-style: italic;
+}
+
+.base-container main .background .inner-background .organised-upcoming {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.base-container main .background .inner-background .organised-upcoming .organised-cruises {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.base-container main .background .inner-background .organised-upcoming .organised-cruises .organised-cruises-description {
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  padding: 0.5em;
+  background: #B7A677 0% 0% no-repeat padding-box;
+  color: #302618;
+}
+
+.base-container main .background .inner-background .organised-upcoming .organised-cruises .organised-cruises-list {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.base-container main .background .inner-background .organised-upcoming .organised-cruises .organised-cruises-list ul {
+  list-style-type: none;
+  width: 95%;
+  padding: 0;
+}
+
+.base-container main .background .inner-background .organised-upcoming .organised-cruises .organised-cruises-list ul li {
+  padding: 0.3em;
+  margin: 0.3em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  color: #302618;
+  cursor: pointer;
+}
+
+.base-container main .background .inner-background .organised-upcoming .upcoming-cruises {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.base-container main .background .inner-background .organised-upcoming .upcoming-cruises .upcoming-cruises-description {
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  padding: 0.5em;
+  background: #B7A677 0% 0% no-repeat padding-box;
+  color: #302618;
+}
+
+.base-container main .background .inner-background .organised-upcoming .upcoming-cruises .upcoming-cruises-list {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.base-container main .background .inner-background .organised-upcoming .upcoming-cruises .upcoming-cruises-list ul {
+  list-style-type: none;
+  width: 95%;
+  padding: 0;
+}
+
+.base-container main .background .inner-background .organised-upcoming .upcoming-cruises .upcoming-cruises-list ul li {
+  padding: 0.3em;
+  margin: 0.3em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  color: #302618;
+  cursor: pointer;
+}
+
+.base-container main .background .inner-background .past-friends {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.base-container main .background .inner-background .past-friends .past-cruises {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.base-container main .background .inner-background .past-friends .past-cruises .past-cruises-description {
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  padding: 0.5em;
+  background: #B7A677 0% 0% no-repeat padding-box;
+  color: #302618;
+}
+
+.base-container main .background .inner-background .past-friends .past-cruises .past-cruises-list {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.base-container main .background .inner-background .past-friends .past-cruises .past-cruises-list ul {
+  list-style-type: none;
+  width: 95%;
+  padding: 0;
+}
+
+.base-container main .background .inner-background .past-friends .past-cruises .past-cruises-list ul li {
+  padding: 0.3em;
+  margin: 0.3em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  color: #302618;
+  cursor: pointer;
+}
+
+.base-container main .background .inner-background .past-friends .friends {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3em;
+}
+
+.base-container main .background .inner-background .past-friends .friends .friends-description {
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  padding: 0.5em;
+  background: #B7A677 0% 0% no-repeat padding-box;
+  color: #302618;
+}
+
+.base-container main .background .inner-background .past-friends .friends .friends-list {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 3em;
+}
+
+.base-container main .background .inner-background .past-friends .friends .friends-list ul {
+  list-style-type: none;
+  width: 95%;
+  padding: 0;
+}
+
+.base-container main .background .inner-background .past-friends .friends .friends-list ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.3em;
+  margin: 0.3em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  color: #302618;
+  cursor: pointer;
+}
+
+.base-container main .background .inner-background .past-friends .friends .friends-list ul li img {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  margin: 0.3em 1em 0.3em 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    font-size: 18px;
+  }
+  .base-container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 100vh;
+  }
+  .base-container .navbar {
+    width: 20vw;
+    height: 100%;
+    position: fixed;
+  }
+  .base-container .navbar ul li i {
+    margin-right: 1em;
+  }
+  .base-container main {
+    width: 80vw;
+    margin-left: 20vw;
+    height: 100%;
+  }
+  .base-container main .background {
+    -webkit-box-pack: right;
+        -ms-flex-pack: right;
+            justify-content: right;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 100%;
+  }
+  .base-container main .background .inner-background {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .base-container main .background .inner-background .organised-upcoming {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .base-container main .background .inner-background .organised-upcoming .organised-cruises {
+    width: 50%;
+  }
+  .base-container main .background .inner-background .organised-upcoming .upcoming-cruises {
+    width: 50%;
+  }
+  .base-container main .background .inner-background .past-friends {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .base-container main .background .inner-background .past-friends .past-cruises {
+    width: 50%;
+  }
+  .base-container main .background .inner-background .past-friends .friends {
+    width: 50%;
+  }
+}
+/*# sourceMappingURL=user_profile.css.map */

@@ -1,34 +1,4 @@
-
-.profile{
-    margin: 1.5em;
-    align-self: flex-end;
-}
-.profile>img{
-    height: 5em;
-    width: 5em;
-    border-radius: 100%;
-    box-shadow: 0px 3px 6px #00000029;
-}
-
-
-.search-bar {
-    width: 100%;
-    margin-left: 0.5em;
-    align-self: center;
-}
-
-.search-bar>form>input {
-    background: transparent 0% 0% no-repeat padding-box;
-    border: 2px solid whitesmoke;
-    border-radius: 23px;
-    width: 100%;
-    height: 2.5em;
-    text-align: center;
-    letter-spacing: 0.72px;
-    color: whitesmoke;
-    margin: 0.5;
-    box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 body {
   background: whitesmoke;
   margin: 0;
@@ -229,7 +199,6 @@ body {
   -webkit-box-shadow: 0px 3px 6px #00000029;
           box-shadow: 0px 3px 6px #00000029;
   color: #302618;
-  cursor: pointer;
 }
 
 .base-container main .background .inner-background .notifications .notifications-list ul li .ex {
@@ -240,6 +209,48 @@ body {
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
+  cursor: pointer;
+}
+
+.base-container main .background .inner-background .notifications .notifications-list ul li .texts-and-stuff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 0.3 em;
+}
+
+.base-container main .background .inner-background .notifications .notifications-list ul li .texts-and-stuff .texts {
+  width: 80%;
+}
+
+.base-container main .background .inner-background .notifications .notifications-list ul li .texts-and-stuff .stuff {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.base-container main .background .inner-background .notifications .notifications-list ul li .texts-and-stuff .stuff .no i {
+  margin: 0.3em;
+  cursor: pointer;
+  color: red;
+}
+
+.base-container main .background .inner-background .notifications .notifications-list ul li .texts-and-stuff .stuff .yes i {
+  margin: 0.3em;
+  cursor: pointer;
+  color: green;
 }
 
 @media only screen and (min-width: 768px) {
@@ -293,3 +304,4 @@ body {
     height: 100%;
   }
 }
+/*# sourceMappingURL=requests.css.map */

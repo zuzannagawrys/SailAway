@@ -1,34 +1,4 @@
-
-.profile{
-    margin: 1.5em;
-    align-self: flex-end;
-}
-.profile>img{
-    height: 5em;
-    width: 5em;
-    border-radius: 100%;
-    box-shadow: 0px 3px 6px #00000029;
-}
-
-
-.search-bar {
-    width: 100%;
-    margin-left: 0.5em;
-    align-self: center;
-}
-
-.search-bar>form>input {
-    background: transparent 0% 0% no-repeat padding-box;
-    border: 2px solid whitesmoke;
-    border-radius: 23px;
-    width: 100%;
-    height: 2.5em;
-    text-align: center;
-    letter-spacing: 0.72px;
-    color: whitesmoke;
-    margin: 0.5;
-    box-sizing: border-box;
-}
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 body {
   background: whitesmoke;
   margin: 0;
@@ -293,3 +263,4 @@ body {
     height: 100%;
   }
 }
+/*# sourceMappingURL=notifications.css.map */
