@@ -86,6 +86,7 @@ body{
             .essential-info{
                 display: flex;
                 flex-direction: column;
+                width: 100%;
                 .button-and-gallery{
                     display:flex;
                     flex-direction: column;
@@ -172,7 +173,7 @@ body{
                     }
                     .cruise-important-information
                     {
-                        width:80%;
+                        width:95%;
                         display:flex;
                         flex-direction: row;
                         align-items: center;
@@ -189,6 +190,12 @@ body{
                                 margin: 0.3em;
                                 box-shadow: 0px 3px 6px #00000029;
                                 color: #302618;
+                                display: flex;
+                                flex-direction: row;
+                                .info{
+                                    margin-left: 0.5em;
+                                    font-weight: bold;
+                                }
                                 
                             }
                         
@@ -201,6 +208,7 @@ body{
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                width: 100%;
                 .detail-information-description{
                     margin-top:3em;
                     display: flex;
@@ -224,7 +232,7 @@ body{
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width:1200px){
+/*@media only screen and (min-width: 768px) and (max-width:1200px){
     body{
         display: flex;
         align-items: center;
@@ -263,6 +271,10 @@ body{
                     .essential-info{
                         display: flex;
                         flex-direction: row;
+                        h1{
+                            position: relative;
+                            top: 1em;
+                        }
                         .button-and-gallery{
                             width:50%;
                             .gallery{
@@ -277,6 +289,7 @@ body{
                         }
                         .captain-and-info{
                             width: 50%;
+
                         }
                         
                     }
@@ -289,7 +302,7 @@ body{
         
     
     
-}
+}*/
 @media only screen and (min-width: 1200px){
     body{
         display: flex;

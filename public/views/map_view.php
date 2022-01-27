@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/mapp_view.css">
+    <link rel="stylesheet" type="text/css" href="public/css/mapp_view.css">
 
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
     <title>MAP_VIEW</title>
@@ -13,7 +13,7 @@
                 <i class="fas fa-plus"></i>
                 add cruise
             </div>
-            <img src="../img/logo.svg" class="logo">
+            <img src="public/img/logo.svg" class="logo">
             <ul>
                 <li>
                     <i class="fas fa-search"></i>
@@ -41,7 +41,7 @@
         </nav>
         <main>
             <div href="#" class="profile">
-                <img src="../img/user.jpg">
+                <img src="public/img/user.jpg">
             </div>
             <section class="map">
                map map map map map map map map map map

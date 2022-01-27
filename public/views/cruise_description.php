@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/cr_desc.css">
+    <link rel="stylesheet" type="text/css" href="public/css/cr_desc.css">
 
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
     <title>CRUISE_DESCRIPTION</title>
@@ -13,7 +13,7 @@
                 <i class="fas fa-plus"></i>
                 add cruise
             </div>
-            <img src="../img/logo.svg" class="logo">
+            <img src="public/img/logo.svg" class="logo">
             <ul>
                 <li>
                     <i class="fas fa-map-marked-alt"></i>
@@ -47,7 +47,7 @@
                                     <i class="fas fa-arrow-left"></i>
                                 </div>
                                 
-                                <img src="../img/jacht.jpg">
+                                <img src="public/uploads/<?=$cruise->getImage() ?>">
                                 <div class="gallery-sidepanel">
                                     <i class="fas fa-arrow-right"></i>
                                 </div>
@@ -58,7 +58,7 @@
                                 Captain
                             </div>
                             <a href="#" class="profile">
-                                <img src="../img/user.jpg">
+                                <img src="public/img/user.jpg">
                                 Konrado
                             </a>
                             <div class="cruise-important-information-description">
@@ -67,28 +67,52 @@
                             <div class="cruise-important-information">
                                 <ul>
                                     <li>
-                                        Dates
+                                        Dates:
+                                        <div class="info">
+                                            <?=$cruise->getStartDate() ?> - <?=$cruise->getEndDate() ?>
+                                        </div>
                                     </li>
                                     <li>
-                                        Basin
+                                        Basin:
+                                        <div class="info">
+                                            <?=$cruise->getBasin() ?>
+                                        </div>
                                     </li>
                                     <li>
-                                        Free spots
+                                        Free spots:
+                                        <div class="info">
+                                            <?=$cruise->getFreePlaces() ?>
+                                        </div>
                                     </li>
                                     <li>
-                                        price per person
+                                        Price per person:
+                                        <div class="info">
+                                            <?=$cruise->getPrice() ?>
+                                        </div>
                                     </li>
                                     <li>
-                                        place of embarkation
+                                        Place of embarkation:
+                                        <div class="info">
+                                            <?=$cruise->getPlaceOfEmbarkation() ?>
+                                        </div>
                                     </li>
                                     <li>
-                                        date of embarkation
+                                        Time of embarkation:
+                                        <div class="info">
+                                            <?=$cruise->getTimeOfEmbarkation() ?>
+                                        </div>
                                     </li>
                                     <li>
-                                        place of disembarkation
+                                        Place of disembarkation:
+                                        <div class="info">
+                                            <?=$cruise->getPlaceOfDisembarkation() ?>
+                                        </div>
                                     </li>
                                     <li>
-                                        date of disembarkation
+                                        Time of disembarkation:
+                                        <div class="info">
+                                            <?=$cruise->getTimeOfDisembarkation() ?>
+                                        </div>
                                     </li>
                                 </ul>
 
@@ -100,7 +124,7 @@
                             Detail Information
                         </div>
                         <div class="detail-information-content">
-                            content
+                            <?= $cruise->getDescription() ?>
                         </div>
                     </div>
 

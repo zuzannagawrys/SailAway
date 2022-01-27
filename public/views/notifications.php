@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/requests.css">
+    <link rel="stylesheet" type="text/css" href="public/css/notifications.css">
 
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
-    <title>REQUESTS</title>
+    <title>NOTIFICATIONS</title>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
                 <i class="fas fa-plus"></i>
                 add cruise
             </div>
-            <img src="../img/logo.svg" class="logo">
+            <img src="public/img/logo.svg" class="logo">
             <ul>
                 <li>
                     <i class="fas fa-map-marked-alt"></i>
@@ -38,7 +38,7 @@
                 <div class="inner-background">
                     <div class="notifications">
                         <div class="notifications-description">
-                            REQUESTS
+                            Notifications
                         </div>
                         <div class="notifications-list">
                             <ul>
@@ -46,19 +46,7 @@
                                     <div class="ex">
                                         <i class="fas fa-times"></i>
                                     </div>
-                                    <div class="texts-and-stuff">
-                                        <div class="texts">
-                                            Jon Con zaprasza Cię do grona znajomych
-                                        </div>
-                                        <div class="stuff">
-                                            <div class="yes">
-                                                <i class="fas fa-check"></i>
-                                            </div>
-                                            <div class="no">
-                                                <i class="fas fa-times"></i>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    Midimo zaakceptowal Twoje zaproszenie do znajomych. 
                                 </li>
                             </ul>
                         </div>

@@ -130,6 +130,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
 .base-container .background .inner-background .essential-info .button-and-gallery {
@@ -267,7 +268,7 @@ body {
 }
 
 .base-container .background .inner-background .essential-info .captain-and-info .cruise-important-information {
-  width: 80%;
+  width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -298,6 +299,18 @@ body {
   -webkit-box-shadow: 0px 3px 6px #00000029;
           box-shadow: 0px 3px 6px #00000029;
   color: #302618;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.base-container .background .inner-background .essential-info .captain-and-info .cruise-important-information ul li .info {
+  margin-left: 0.5em;
+  font-weight: bold;
 }
 
 .base-container .background .inner-background .detail-information {
@@ -314,6 +327,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
 .base-container .background .inner-background .detail-information .detail-information-description {
@@ -391,11 +405,10 @@ body {
         -ms-flex-direction: row;
             flex-direction: row;
     height: 100%;
+      width: 100%;
   }
   body .base-container .background .inner-background {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+      height: 100%;
   }
   body .base-container .background .inner-background .essential-info {
     display: -webkit-box;
@@ -405,6 +418,10 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+  body .base-container .background .inner-background .essential-info h1 {
+    position: relative;
+    top: 1em;
   }
   body .base-container .background .inner-background .essential-info .button-and-gallery {
     width: 50%;
@@ -469,11 +486,12 @@ body {
         -ms-flex-direction: row;
             flex-direction: row;
     height: 100%;
+
   }
   body .base-container .background .inner-background {
     height: -webkit-fit-content;
     height: -moz-fit-content;
-    height: fit-content;
+
   }
   body .base-container .background .inner-background .essential-info {
     display: -webkit-box;

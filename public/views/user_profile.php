@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/user_profile.css">
+    <link rel="stylesheet" type="text/css" href="public/css/user_profile.css">
 
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
     <title>USER_PROFILE</title>
@@ -13,7 +13,7 @@
                 <i class="fas fa-plus"></i>
                 add cruise
             </div>
-            <img src="../img/logo.svg" class="logo">
+            <img src="public/img/logo.svg" class="logo">
             <ul>
                 <li>
                     <i class="fas fa-map-marked-alt"></i>
@@ -37,7 +37,7 @@
             <div class="background">
                 <div class="inner-background">
                     <div class="picture-and-description">
-                        <img src="../img/user.jpg">
+                        <img src="public/img/user.jpg">
                         <div class="opis">
                             <div class="nick">
                                 Armado
@@ -102,11 +102,11 @@
                             <div class="friends-list">
                                 <ul>
                                     <li>
-                                        <img src=../img/user.jpg>
+                                        <img src=public/img/user.jpg>
                                         Midimo
                                     </li>
                                     <li>
-                                        <img src=../img/user.jpg>
+                                        <img src=public/img/user.jpg>
                                         John Con
                                     </li>
                                 </ul>

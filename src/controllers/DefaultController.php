@@ -8,9 +8,37 @@ class DefaultController extends AppController {
     {
         $this->render('login');
     }
-
-    public function projects()
+    public function login()
     {
-        $this->render('projects');
+        $this->render('login');
     }
+
+    public function registration()
+    {
+        $this->render('registration');
+    }
+
+    public function map_view()
+    {
+        $this->render('map_view');
+    }
+    public function notifications()
+    {
+        $this->render('notifications');
+    }
+    public function requests()
+    {
+        $this->render('requests');
+    }
+    public function cruise_description()
+    {
+        $this->render('cruise_description');
+    }
+    public function user_profile()
+    {
+        $this->render('user_profile');
+    }
+
+
+
 }

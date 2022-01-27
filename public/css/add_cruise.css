@@ -1,0 +1,248 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+body {
+    background: whitesmoke;
+    margin: 0;
+    font-family: 'Playfair Display';
+}
+
+.base-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.base-container .navbar {
+    background: transparent -webkit-gradient(linear, left top, left bottom, from(#346795), to(#1A3168)) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #346795 0%, #1A3168 100%) 0% 0% no-repeat padding-box;
+    padding: 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    place-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.base-container .navbar .add-project {
+    background: #302618 0% 0% no-repeat padding-box;
+    -webkit-box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 2em;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    border-radius: 1.5em;
+    color: #B7A677;
+    letter-spacing: 0.1em;
+    text-align: center;
+    width: 80%;
+    cursor: pointer;
+}
+
+.base-container .navbar .add-project > i {
+    padding: 1em 1em;
+}
+
+.base-container .navbar .logo {
+    width: 200px;
+    margin: 2em auto;
+}
+
+.base-container .navbar ul {
+    list-style-type: none;
+    font: normal normal normal 20px/27px TimesNewRoman;
+    letter-spacing: 0.72px;
+    color: whitesmoke;
+    height: 100%;
+    width: calc(100% - 40px);
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.base-container .navbar ul li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    text-align: left;
+    color: whitesmoke;
+    margin-bottom: 1em;
+}
+
+.base-container .navbar ul li i {
+    font-size: 1.5em;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    width: 15%;
+}
+
+.base-container .navbar ul li a {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 2em;
+}
+
+.base-container .navbar ul li .button {
+    border-bottom: 1px solid whitesmoke;
+    letter-spacing: 0.72px;
+    color: whitesmoke;
+    padding: 0.2rem;
+    width: 100%;
+}
+.base-container .background {
+    background-color: #B7A677;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.base-container .background .inner-background {
+    background-color: whitesmoke;
+    width: 95%;
+    -webkit-box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px #00000029;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Playfair Display';
+    color: #302618;
+    align-items: center;
+    height: fit-content;
+}
+.base-container .background .inner-background form{
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+body .base-container .background .inner-background form{
+    width:100%;
+    margin:3em;
+}
+button {
+    background: #302618 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    margin-top: 2em;
+    align-self: center;
+    border-radius: 1.5em;
+    color: #B7A677;
+    letter-spacing: 0.1em;
+    text-align: center;
+    width: 40%;
+    height: 50px;
+    cursor: pointer;
+    font-family: 'Playfair Display';
+}
+input,textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #B7A677;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+}
+
+@media only screen and (min-width: 790px) {
+    body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        font-size: 18px;
+    }
+    body .base-container {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        height: 100vh;
+    }
+    body .base-container .navbar {
+        width: 20vw;
+        height: 100%;
+        position: fixed;
+    }
+    body .base-container .navbar ul li i {
+        margin-right: 1em;
+    }
+    body .base-container main {
+        margin-left: 20vw;
+        width: 80vw;
+        height: 100%;
+    }
+    body .base-container .background {
+        -webkit-box-pack: right;
+        -ms-flex-pack: right;
+        justify-content: right;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        height: 100%;
+    }
+    body .base-container .background .inner-background {
+        display: flex;
+        flex-display: column;
+        align-items: center;
+        font-family: 'Playfair Display';
+        color: #302618;
+    }
+    body .base-container .background .inner-background form{
+        width:100%;
+        margin:3em;
+    }
+    button {
+        background: #302618 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        margin-top: 2em;
+        align-self: center;
+        border-radius: 1.5em;
+        color: #B7A677;
+        letter-spacing: 0.1em;
+        text-align: center;
+        width: 40%;
+        height: 50px;
+        cursor: pointer;
+        font-family: 'Playfair Display';
+    }
+    input,textarea {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #B7A677;
+        padding: 1em;
+        margin: 1em;
+        width: 50%;
+    }
+
+
+}
