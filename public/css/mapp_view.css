@@ -4,7 +4,6 @@ body {
   margin: 0;
   font-family: 'Playfair Display';
 }
-
 .base-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,12 +91,6 @@ body {
   width: 15%;
 }
 
-.base-container .navbar ul li a {
-  text-decoration: none;
-  display: inline-block;
-  line-height: 2em;
-}
-
 .base-container .navbar ul li .button {
   border-bottom: 1px solid whitesmoke;
   letter-spacing: 0.72px;
@@ -114,10 +107,25 @@ body {
       align-self: center;
 }
 
+.base-container .navbar ul li .search-bar ::-webkit-input-placeholder {
+  color: whitesmoke;
+}
+
+.base-container .navbar ul li .search-bar :-ms-input-placeholder {
+  color: whitesmoke;
+}
+
+.base-container .navbar ul li .search-bar ::-ms-input-placeholder {
+  color: whitesmoke;
+}
+
+.base-container .navbar ul li .search-bar ::placeholder {
+  color: whitesmoke;
+}
+
 .base-container .navbar ul li .search-bar > form > input {
   background: transparent 0% 0% no-repeat padding-box;
-  border: 2px solid whitesmoke;
-  border-radius: 23px;
+  border: none;
   width: 100%;
   height: 2.5em;
   text-align: center;
@@ -126,6 +134,70 @@ body {
   margin: 0.5;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.base-container .navbar ul li .dates {
+  width: 100%;
+  margin-left: 0.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.base-container .navbar ul li .dates > form > input {
+  background: transparent 0% 0% no-repeat padding-box;
+  border: none;
+  width: 45%;
+  height: 2.5em;
+  text-align: center;
+  letter-spacing: 0.72px;
+  color: whitesmoke;
+  margin: 0.2em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.base-container .navbar ul li .spots {
+  width: 100%;
+  margin-left: 0.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.base-container .navbar ul li .spots ::-webkit-input-placeholder {
+  color: whitesmoke;
+}
+
+.base-container .navbar ul li .spots :-ms-input-placeholder {
+  color: whitesmoke;
+}
+
+.base-container .navbar ul li .spots ::-ms-input-placeholder {
+  color: whitesmoke;
+}
+
+.base-container .navbar ul li .spots ::placeholder {
+  color: whitesmoke;
+}
+
+.base-container .navbar ul li .spots > form > input {
+  background: transparent 0% 0% no-repeat padding-box;
+  border: none;
+  width: 100%;
+  height: 2.5em;
+  text-align: center;
+  letter-spacing: 0.72px;
+  color: whitesmoke;
+  margin: 0.5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.base-container .navbar ul li a {
+  text-decoration: none;
+  display: inline-block;
+  line-height: 2em;
 }
 
 .base-container main {
@@ -155,6 +227,69 @@ body {
   border-radius: 100%;
   height: 5em;
   width: 5em;
+}
+
+.base-container main .map .cruise-important-information-description {
+  margin-top: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #B7A677 0% 0% no-repeat padding-box;
+  color: #302618;
+  padding: 0.5em;
+  width: 50%;
+}
+
+.base-container main .map .cruise-important-information {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.base-container main .map .cruise-important-information ul {
+  list-style-type: none;
+  width: 95%;
+  padding: 0;
+}
+
+.base-container main .map .cruise-important-information ul li {
+  padding: 0.3em;
+  margin: 0.3em;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  color: #302618;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.base-container main .map .cruise-important-information ul li .info {
+  margin-left: 0.5em;
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) {

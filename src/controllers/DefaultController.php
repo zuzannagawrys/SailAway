@@ -18,10 +18,6 @@ class DefaultController extends AppController {
         $this->render('registration');
     }
 
-    public function map_view()
-    {
-        $this->render('map_view');
-    }
     public function notifications()
     {
         $this->render('notifications');

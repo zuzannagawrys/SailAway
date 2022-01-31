@@ -60,11 +60,6 @@ body{
                     align-self:center;
                     width:15%
                 }
-                a {
-                    text-decoration: none;
-                    display: inline-block;
-                    line-height: 2em;
-                }
                 .button {
                     border-bottom: 1px solid whitesmoke;
                     letter-spacing: 0.72px;
@@ -76,12 +71,51 @@ body{
                     width: 100%;
                     margin-left: 0.5em;
                     align-self: center;
+                    ::placeholder {
+                        color: whitesmoke;
+                      }
+                }
+                .search-bar>input {
+                    background: transparent 0% 0% no-repeat padding-box;
+                    border: none;
+                    width: 100%;
+                    height: 2.5em;
+                    text-align: center;
+                    letter-spacing: 0.72px;
+                    color: whitesmoke;
+                    margin: 0.5;
+                    box-sizing: border-box;
+                    
                 }
                 
-                .search-bar>form>input {
+                .dates {
+                    width: 100%;
+                    margin-left: 0.5em;
+                    align-self: center;
+                    
+                }
+                .dates>form>input {
                     background: transparent 0% 0% no-repeat padding-box;
-                    border: 2px solid whitesmoke;
-                    border-radius: 23px;
+                    border: none;
+                    width: 45%;
+                    height: 2.5em;
+                    text-align: center;
+                    letter-spacing: 0.72px;
+                    color: whitesmoke;
+                    margin: 0.2em;
+                    box-sizing: border-box;
+                }
+                .spots {
+                    width: 100%;
+                    margin-left: 0.5em;
+                    align-self: center;
+                    ::placeholder {
+                        color: whitesmoke;
+                      }
+                }
+                .spots>form>input {
+                    background: transparent 0% 0% no-repeat padding-box;
+                    border: none;
                     width: 100%;
                     height: 2.5em;
                     text-align: center;
@@ -90,6 +124,14 @@ body{
                     margin: 0.5;
                     box-sizing: border-box;
                 }
+                a {
+                    text-decoration: none;
+                    display: inline-block;
+                    line-height: 2em;
+                }
+                
+                
+
             }
         }
 
@@ -114,13 +156,55 @@ body{
             height: 5em;
             width: 5em;
         }
+        .map{
+            .cruise-important-information-description{
+                margin-top:3em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #B7A677 0% 0% no-repeat padding-box;
+                color: #302618;
+                padding:0.5em;
+                width:50%;
+
+            }
+            .cruise-important-information
+            {
+                width:95%;
+                display:flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 0.5em;
+                box-shadow: 0px 3px 6px #00000029;
+                justify-content: center;
+                ul{
+                    list-style-type: none;
+                    width:95%;
+                    padding:0;
+                    li{
+
+                        padding: 0.3em;
+                        margin: 0.3em;
+                        box-shadow: 0px 3px 6px #00000029;
+                        color: #302618;
+                        display: flex;
+                        flex-direction: row;
+                        .info{
+                            margin-left: 0.5em;
+                            font-weight: bold;
+                        }
+
+                    }
+
+                }
+            }
+        }
         
         
     }
 
     
 }
-
 @media only screen and (min-width: 768px) {
     body{
         display: flex;

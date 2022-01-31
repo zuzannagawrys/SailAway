@@ -1,6 +1,7 @@
 <?php
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Cruise.php';
+require_once __DIR__.'/../repository/CruiseRepository.php';
 class CruiseController extends AppController
 {
     const MAX_FILE_SIZE=1024*1024;
@@ -8,6 +9,13 @@ class CruiseController extends AppController
     const UPLOAD_DIRECTORY = '/../public/uploads';
 
     private $message = [];
+    private $cruiseRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->cruiseRepository=new CruiseRepository();
+    }
 
     public function addCruise()
     {
@@ -17,13 +25,44 @@ class CruiseController extends AppController
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.'/'.$_FILES['file']['name']
             );
             $cruise = new Cruise($_POST['title'], $_POST['startDate'], $_POST['endDate'], $_POST['basin'], $_POST['freePlaces'], $_POST['price'], $_POST['placeOfEmbarkation'], $_POST['timeOfEmbarkation'], $_POST['placeOfDisembarkation'], $_POST['timeOfDisembarkation'],$_POST['description'], $_FILES['file']['name']);
-            $this->render('cruise_description', ['messages'=>$this->message,  'cruise' => $cruise]);
+            $this->cruiseRepository->addCruise($cruise);
+            return $this->render('cruise_description', ['messages'=>$this->message,  'cruise' => $cruise]);
+
+
 
         }
-        else{
-            $this->render('add_cruise', ['messages'=>$this->message ]);
-        }
 
+            return $this->render('add_cruise', ['messages'=>$this->message ]);
+
+
+
+
+    }
+    public function search()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->cruiseRepository->getCruiseByTitle($decoded['search']));
+        }
+    }
+    public function searchStartDate()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+            echo json_encode($this->cruiseRepository->getCruiseByStartDate($decoded['search']));
+        }
     }
     private function validate(array $file):bool
     {
@@ -37,5 +76,10 @@ class CruiseController extends AppController
             return false;
         }
         return true;
+    }
+    public function map_view()
+    {
+        $cruises=$this->cruiseRepository->getCruises();
+        $this->render('map_view', ['cruises' =>$cruises]);
     }
 }

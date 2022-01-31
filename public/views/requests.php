@@ -9,27 +9,27 @@
 <body>
     <div class="base-container">
         <nav class="navbar">
-            <div class="add-project">
+            <a href="http://localhost:8080/addCruise" class="add-project">
                 <i class="fas fa-plus"></i>
                 add cruise
-            </div>
+            </a>
             <img src="public/img/logo.svg" class="logo">
             <ul>
                 <li>
                     <i class="fas fa-map-marked-alt"></i>
-                    <a href="#" class="button">map</a>
+                    <a href="http://localhost:8080/map_view#" class="button">map</a>
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
-                    <a href="#" class="button">profile</a>
+                    <a href="http://localhost:8080/user_profile#" class="button">profile</a>
                 </li>
                 <li>
                     <i class="fas fa-bell"></i>
-                    <a href="#" class="button">notifications</a>
+                    <a href="http://localhost:8080/notifications" class="button">notifications</a>
                 </li>
                 <li>
                     <i class="fas fa-hand-point-right"></i>
-                    <a href="#" class="button">requests</a>
+                    <a href="http://localhost:8080/requests" class="button">requests</a>
                 </li>
             </ul>
         </nav>
