@@ -26,18 +26,22 @@ class CruiseRepository extends Repository
             $cruise['place_of_disembarkation'],
             $cruise['time_of_disembarkation'],
             $cruise['description'],
-            $cruise['image']
+            $cruise['image'],
+            $cruise['xlocation'],
+            $cruise['ylocation'],
+            $cruise['cruise_id']
         );
+
     }
     public function addCruise(Cruise $cruise): void
     {
         $date = new DateTime();
         $stmt=$this->database->connect()->prepare(
-            ' INSERT INTO cruises (title,user_id,start_date,end_date,basin,free_places,price,place_of_embarkation,time_of_embarkation,place_of_disembarkation,time_of_disembarkation, created_at, image, description)
-                    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
+            ' INSERT INTO cruises (title,user_id,start_date,end_date,basin,free_places,price,place_of_embarkation,time_of_embarkation,place_of_disembarkation,time_of_disembarkation, created_at, image, description, xlocation, ylocation)
+                    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
         ');
 
-        $user_id=2;
+        $user_id=$_SESSION['username'];
         $stmt->execute([
             $cruise->getTitle(),
             $user_id,
@@ -52,7 +56,9 @@ class CruiseRepository extends Repository
             $cruise->getTimeOfDisembarkation(),
             $date->format('Y-m-d'),
             $cruise->getImage(),
-            $cruise->getDescription()
+            $cruise->getDescription(),
+            $cruise->getXLocation(),
+            $cruise->getYLocation()
         ]);
     }
     public function getCruises(): array
@@ -77,7 +83,10 @@ class CruiseRepository extends Repository
                 $cruise['place_of_disembarkation'],
                 $cruise['time_of_disembarkation'],
                 $cruise['description'],
-                $cruise['image']
+                $cruise['image'],
+                $cruise['xlocation'],
+                $cruise['ylocation'],
+                $cruise['cruise_id']
             );
         }
         return $result;
@@ -92,6 +101,17 @@ class CruiseRepository extends Repository
             SELECT * FROM cruises WHERE LOWER(basin) LIKE :search
         ');
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getCruiseById(int $id)
+    {
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM cruises WHERE cruises.cruise_id LIKE :search
+        ');
+        $stmt->bindParam(':search', $id, PDO::PARAM_STR);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -14,13 +14,15 @@ class UserRepository extends Repository
         if($user == false){
             return null;
         }
-        return new User(
+        $user2= new User(
             $user['email'],
             $user['password'],
             $user['name'],
             $user['surname'],
             $user['nick']
         );
+        $user2->setId($user['user_id']);
+        return $user2;
     }
     public function addUser(User $user)
     {

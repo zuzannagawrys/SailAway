@@ -14,8 +14,11 @@ class Cruise
     private $timeOfDisembarkation;
     private $description;
     private $image;
+    private $xLocation;
+    private $yLocation;
+    private $id;
 
-    public function __construct($title, $startDate, $endDate, $basin, $freePlaces, $price, $placeOfEmbarkation, $timeOfEmbarkation, $placeOfDisembarkation, $timeOfDisembarkation, $description, $image)
+    public function __construct($title, $startDate, $endDate, $basin, $freePlaces, $price, $placeOfEmbarkation, $timeOfEmbarkation, $placeOfDisembarkation, $timeOfDisembarkation, $description, $image, $xLocation,$yLocation, $id)
     {
         $this->title = $title;
         $this->startDate = $startDate;
@@ -29,6 +32,40 @@ class Cruise
         $this->timeOfDisembarkation = $timeOfDisembarkation;
         $this->description = $description;
         $this->image = $image;
+        $this->xLocation = $xLocation;
+        $this->yLocation = $yLocation;
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+
+    public function getXLocation(): float
+    {
+        return $this->xLocation;
+    }
+
+    public function setXLocation($xLocation): void
+    {
+        $this->xLocation = $xLocation;
+    }
+
+    public function getYLocation(): float
+    {
+        return $this->yLocation;
+    }
+
+    public function setYLocation($yLocation): void
+    {
+        $this->yLocation = $yLocation;
     }
 
     public function getStartDate(): string

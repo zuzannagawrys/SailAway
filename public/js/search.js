@@ -2,10 +2,10 @@ const search = document.querySelector('input[placeholder="search basin"]');
 const searchStartDate = document.querySelector('input[name="startDate"]');
 const cruiseContainer = document.querySelector(".map");
 
+
 search.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
-
         const data = {search: this.value};
 
         fetch("/search", {
@@ -78,3 +78,4 @@ function createCruise(cruise) {
     time_of_disembarkation .innerHTML = cruise.time_of_disembarkation ;
     cruiseContainer.appendChild(clone);
 }
+

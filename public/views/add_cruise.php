@@ -1,70 +1,20 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="public/css/add_cruise.css">
-
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
     <title>ADD_CRUISE</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript">
-        var geocoder;
-
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map {
+            width: 40vw;
+            height: 40vh;
+            margin: 1em;
         }
-        //Get the latitude and the longitude;
-        function successFunction(position) {
-            var lat = position.coords.latitude;
-            var lng = position.coords.longitude;
-            codeLatLng(lat, lng)
-        }
-
-        function errorFunction(){
-            alert("Geocoder failed");
-        }
-
-        function initialize() {
-            geocoder = new google.maps.Geocoder();
-
-
-
-        }
-
-        function codeLatLng(lat, lng) {
-
-            var latlng = new google.maps.LatLng(lat, lng);
-            geocoder.geocode({'latLng': latlng}, function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    console.log(results)
-                    if (results[1]) {
-                        //formatted address
-                        alert(results[0].formatted_address)
-                        //find country name
-                        for (var i=0; i<results[0].address_components.length; i++) {
-                            for (var b=0;b<results[0].address_components[i].types.length;b++) {
-
-                                //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
-                                if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
-                                    //this is the object you are looking for
-                                    city= results[0].address_components[i];
-                                    break;
-                                }
-                            }
-                        }
-                        //city data
-                        alert(city.short_name + " " + city.long_name)
-
-
-                    } else {
-                        alert("No results found");
-                    }
-                } else {
-                    alert("Geocoder failed due to: " + status);
-                }
-            });
-        }
-    </script>
+    </style>
 </head>
 
 <body>
@@ -118,6 +68,50 @@
                         </div>
                         <input name="endDate" type="date" placeholder="end date">
                         <input name="basin" type="text" placeholder="basin">
+<!--                        <div class="desc">-->
+<!--                            PIN YOUR JOURNEY-->
+<!--                        </div>-->
+                        <a href="https://www.latlong.net/convert-address-to-lat-long.html"> click here to look up coordinates</a>
+                        <!-- Load the `mapbox-gl-geocoder` plugin. -->
+<!--                        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>-->
+<!--                        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">-->
+<!---->
+<!--                            <div id="map">-->
+<!--                            </div>-->
+<!--                            <div id="result"></div>-->
+<!--                            <script>-->
+<!--                                mapboxgl.accessToken = 'pk.eyJ1IjoienV6YWdhd3J5cyIsImEiOiJja3ZpNGtpcW8xdDNqMm9xNTV5NngwZXlvIn0.t4FWQezDYrT9EQQKmi4RPQ';-->
+<!--                                const map = new mapboxgl.Map({-->
+<!--                                    container: 'map',-->
+<!--                                    style: 'mapbox://styles/mapbox/streets-v11',-->
+<!--                                    center: [-79.4512, 43.6568],-->
+<!--                                    zoom: 13-->
+<!--                                });-->
+<!---->
+<!--                                // Add the control to the map.-->
+<!--                                const geocoder=new MapboxGeocoder({accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl, })-->
+<!--                                map.addControl(geocoder);-->
+<!--                                geocoder.addTo('#geocoder');-->
+<!---->
+<!--                                // Get the geocoder results container.-->
+<!--                                const results = document.getElementById('result');-->
+<!--                                // Add geocoder result to container.-->
+<!--                                geocoder.on('result', (e) => {-->
+<!--                                    results.innerText = JSON.stringify(e.result, null, 2);-->
+<!--                                });-->
+<!--                                // Clear results container when search is cleared.-->
+<!--                                geocoder.on('clear', () => {-->
+<!--                                    results.innerText = '';-->
+<!--                                });-->
+<!--                                // console.log(results);-->
+<!--                                // let inp = document.createElement('input');-->
+<!--                                // inp.name = 'location';-->
+<!--                                // inp.type='hidden';-->
+<!--                                // inp.innerText = results.innerText;-->
+<!--                                // document.body.appendChild(inp);-->
+<!--                            </script>-->
+                        <input name="ylocation" type="number" step="0.000001" placeholder="latitude">
+                        <input name="xlocation" type="number" step="0.000001" placeholder="longitude">
                         <input name="freePlaces" type="number" placeholder="number of free spots left">
                         <input name="price" type="text" placeholder="price per person">
                         <div id=placeOfEmbarkation" >
@@ -128,11 +122,10 @@
                         <input name="timeOfDisembarkation" type="text" placeholder="time of disembarkation">
                         <textarea name="description" rows="20" placeholder="description"></textarea>
                         <input type="file" name="file">
-                        <button type="submit">SEND</button>
+                        <button type="submit" >SEND</button>
                     </form>
                 </div>
             </div>
         </main>
     </div>
-        
 </body>

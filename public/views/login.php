@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/login.css">
@@ -26,9 +27,8 @@
                 </form>
             </div>
             <div class="registration">
-                <button>REGISTRATION</button>
+                <a class="bb" href="http://localhost:8080/registration">REGISTRATION</a>
             </div>
-
         </div>
     </div>
 </body>

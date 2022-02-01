@@ -33,6 +33,8 @@ class SecurityController extends AppController
         if($user->getPassword() !== $password){
             return $this->render('login', ['messages'=>["Incorrect password!"]]);
         }
+        $_SESSION['logon']=1;
+        $_SESSION['username']=$user->getId();
         $url="http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/map_view");
         die();
