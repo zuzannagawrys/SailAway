@@ -5,7 +5,19 @@ body {
     margin: 0;
     font-family: 'Playfair Display';
 }
-
+.add-project {
+    text-decoration: none;
+    background: #302618 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    margin: 1em;
+    border-radius: 1.5em;
+    color: #B7A677;
+    letter-spacing: 0.1em;
+    text-align: center;
+    width: 30%;
+    cursor: pointer;
+    padding: 0.5em
+}
 .base-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -34,6 +46,7 @@ body {
 }
 
 .base-container .navbar .add-project {
+    text-decoration: none;
     background: #302618 0% 0% no-repeat padding-box;
     -webkit-box-shadow: 0px 3px 6px #00000029;
     box-shadow: 0px 3px 6px #00000029;

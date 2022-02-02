@@ -21,7 +21,7 @@
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
-                    <a href="http://localhost:8080/user_profile#" class="button">profile</a>
+                    <a href="http://localhost:8080/user_profile?id=<?=$_SESSION['username']?>" class="button">profile</a>
                 </li>
                 <li>
                     <i class="fas fa-bell"></i>

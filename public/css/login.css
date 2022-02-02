@@ -60,13 +60,28 @@ button {
     margin: 1em;
     line-height: 2.5em;
 }
+a {
+    text-decoration: none;
+    text-align: center;
+    background: #302618 0% 0% no-repeat padding-box;
+    border: 2px solid #B7A677;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 30%;
+    color: #B7A677;
+    margin: 1em;
+    line-height: 2.5em;
+}
 input {
+    color: #B7A677;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #B7A677;
     padding: 1em;
     margin: 1em;
     width: 50%;
+}
+.messages{
+    color:#B7A677;
 }
 
 @media only screen and (max-device-width: 420px) {
@@ -119,7 +134,7 @@ input {
         align-items: center;
     
     }
-    button {
+    button{
         background: #302618 0% 0% no-repeat padding-box;
         border: 2px solid #B7A677;
         box-shadow: 0px 3px 6px #00000029;
@@ -136,6 +151,7 @@ input {
         padding: 1em;
         margin: 1em;
         width: 50%;
+        color: #B7A677;
     }
     img {
         height: 21em;

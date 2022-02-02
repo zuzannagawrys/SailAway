@@ -33,6 +33,7 @@ body {
 }
 
 .base-container .navbar .add-project {
+  text-decoration: none;
   background: #302618 0% 0% no-repeat padding-box;
   -webkit-box-shadow: 0px 3px 6px #00000029;
           box-shadow: 0px 3px 6px #00000029;

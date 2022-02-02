@@ -2,6 +2,8 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Cruise.php';
 require_once __DIR__.'/../repository/CruiseRepository.php';
+require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__.'/../repository/RequestRepository.php';
 class CruiseController extends AppController
 {
     const MAX_FILE_SIZE=1024*1024;
@@ -10,16 +12,21 @@ class CruiseController extends AppController
 
     private $message = [];
     private $cruiseRepository;
+    private $userRepository;
+    private $requestRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->cruiseRepository=new CruiseRepository();
+        $this->userRepository=new UserRepository();
+        $this->requestRepository=new RequestRepository();
     }
     public function cruise_description()
     {
             $cruise=$this->cruiseRepository->getCruise($_GET['id']);
-            return $this->render('cruise_description', ['messages'=>$this->message,  'cruise' => $cruise]);
+            $user = $this->userRepository->getUserById($cruise->getUserId());
+            return $this->render('cruise_description', ['messages'=>$this->message,  'cruise' => $cruise, 'user'=>$user]);
 
     }
 
@@ -30,10 +37,10 @@ class CruiseController extends AppController
                 $_FILES['file']['tmp_name'],
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.'/'.$_FILES['file']['name']
             );
-            $decoded=json_decode($_POST['location'], true, 4);
-            $cruise = new Cruise($_POST['title'], $_POST['startDate'], $_POST['endDate'], $_POST['basin'], $_POST['freePlaces'], $_POST['price'], $_POST['placeOfEmbarkation'], $_POST['timeOfEmbarkation'], $_POST['placeOfDisembarkation'], $_POST['timeOfDisembarkation'],$_POST['description'], $_FILES['file']['name'],$_POST['xlocation'],$_POST['ylocation']);
+            $cruise = new Cruise($_POST['title'], $_POST['startDate'], $_POST['endDate'], $_POST['basin'], $_POST['freePlaces'], $_POST['price'], $_POST['placeOfEmbarkation'], $_POST['timeOfEmbarkation'], $_POST['placeOfDisembarkation'], $_POST['timeOfDisembarkation'],$_POST['description'], $_FILES['file']['name'],$_POST['xlocation'],$_POST['ylocation'],$_SESSION['username']);
+            $user = $this->userRepository->getUserById($cruise->getUserId());
             $this->cruiseRepository->addCruise($cruise);
-            return $this->render('cruise_description', ['messages'=>$this->message,  'cruise' => $cruise]);
+            return $this->render('cruise_description', ['messages'=>$this->message,  'cruise' => $cruise, 'user'=>$user]);
 
         }
             return $this->render('add_cruise', ['messages'=>$this->message ]);
@@ -64,6 +71,13 @@ class CruiseController extends AppController
             http_response_code(200);
             echo json_encode($this->cruiseRepository->getCruiseByStartDate($decoded['search']));
         }
+    }
+    public function applyForCruise()
+    {
+        $id=$_GET['id'];
+        $cruise=$this->cruiseRepository->getCruise($id);
+        $request=new Request($_SESSION['username'],$cruise->getUserId(),$id);
+        $this->requestRepository->addRequest($request);
     }
     private function validate(array $file):bool
     {

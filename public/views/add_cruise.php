@@ -32,7 +32,7 @@
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
-                    <a href="http://localhost:8080/user_profile#" class="button">profile</a>
+                    <a href="http://localhost:8080/user_profile?id=<?=$_SESSION['username']?>" class="button">profile</a>
                 </li>
                 <li>
                     <i class="fas fa-bell"></i>
@@ -71,7 +71,7 @@
 <!--                        <div class="desc">-->
 <!--                            PIN YOUR JOURNEY-->
 <!--                        </div>-->
-                        <a href="https://www.latlong.net/convert-address-to-lat-long.html"> click here to look up coordinates</a>
+                        <a class="add-project" href="https://www.latlong.net/convert-address-to-lat-long.html"> click here to look up coordinates</a>
                         <!-- Load the `mapbox-gl-geocoder` plugin. -->
 <!--                        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>-->
 <!--                        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">-->
@@ -114,7 +114,7 @@
                         <input name="xlocation" type="number" step="0.000001" placeholder="longitude">
                         <input name="freePlaces" type="number" placeholder="number of free spots left">
                         <input name="price" type="text" placeholder="price per person">
-                        <div id=placeOfEmbarkation" >
+                        <div id="placeOfEmbarkation" >
                             <input name="placeOfEmbarkation" type="text" placeholder="place of embarkation">
                         </div>
                         <input name="timeOfEmbarkation" type="text" placeholder="time of embarkation">

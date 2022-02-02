@@ -19,6 +19,7 @@ body{
         box-shadow: 0px 3px 6px #00000029;
         box-sizing: border-box;
         .add-project {
+            text-decoration: none;
             background: #302618 0% 0% no-repeat padding-box;
             box-shadow: 0px 3px 6px #00000029;
             margin-top: 2em;
@@ -74,8 +75,7 @@ body{
                     ::placeholder {
                         color: whitesmoke;
                       }
-                }
-                .search-bar>input {
+                    input {
                     background: transparent 0% 0% no-repeat padding-box;
                     border: none;
                     width: 100%;
@@ -85,7 +85,7 @@ body{
                     color: whitesmoke;
                     margin: 0.5;
                     box-sizing: border-box;
-                    
+                    }
                 }
                 
                 .dates {

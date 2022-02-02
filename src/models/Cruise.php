@@ -17,8 +17,9 @@ class Cruise
     private $xLocation;
     private $yLocation;
     private $id;
+    private $user_id;
 
-    public function __construct($title, $startDate, $endDate, $basin, $freePlaces, $price, $placeOfEmbarkation, $timeOfEmbarkation, $placeOfDisembarkation, $timeOfDisembarkation, $description, $image, $xLocation,$yLocation, $id)
+    public function __construct($title, $startDate, $endDate, $basin, $freePlaces, $price, $placeOfEmbarkation, $timeOfEmbarkation, $placeOfDisembarkation, $timeOfDisembarkation, $description, $image, $xLocation,$yLocation, $user_id)
     {
         $this->title = $title;
         $this->startDate = $startDate;
@@ -34,10 +35,21 @@ class Cruise
         $this->image = $image;
         $this->xLocation = $xLocation;
         $this->yLocation = $yLocation;
-        $this->id = $id;
+        $this->user_id = $user_id;
     }
 
-    public function getId()
+
+    public function getUserId(): int
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId($user_id): void
+    {
+        $this->user_id = $user_id;
+    }
+
+    public function getId(): int
     {
         return $this->id;
     }

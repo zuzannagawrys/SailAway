@@ -27,7 +27,7 @@
                 </form>
             </div>
             <div class="registration">
-                <a class="bb" href="http://localhost:8080/registration">REGISTRATION</a>
+                <a href="http://localhost:8080/registration">REGISTRATION</a>
             </div>
         </div>
     </div>

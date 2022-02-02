@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/cr_desc.css">
-
+    <script type="text/javascript" src="./public/js/apply_for_spot.js" defer></script>
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
     <title>CRUISE_DESCRIPTION</title>
 </head>
@@ -21,7 +21,7 @@
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
-                    <a href="http://localhost:8080/user_profile#" class="button">profile</a>
+                    <a href="http://localhost:8080/user_profile?id=<?=$_SESSION['username']?>" class="button">profile</a>
                 </li>
                 <li>
                     <i class="fas fa-bell"></i>
@@ -38,10 +38,10 @@
                 <div class="inner-background">
                     <div class="essential-info">
                         <div class="button-and-gallery">
-                            <div class="apply-for-spot">
+                            <a id="<?=$cruise->getId() ?>" class="apply-for-spot">
                                 <i class="fas fa-plus"></i>
                                 apply for spot
-                            </div>
+                            </a>
                             <div class="gallery">
                                 <div class="gallery-sidepanel">
                                     <i class="fas fa-arrow-left"></i>
@@ -59,7 +59,7 @@
                             </div>
                             <a href="#" class="profile">
                                 <img src="public/img/user.jpg">
-                                Konrado
+                                <?=$user->getNick() ?>
                             </a>
                             <div class="cruise-important-information-description">
                                 Information

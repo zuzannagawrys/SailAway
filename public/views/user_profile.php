@@ -21,7 +21,7 @@
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
-                    <a href="http://localhost:8080/user_profile#" class="button">profile</a>
+                    <a href="http://localhost:8080/user_profile?id=<?=$_SESSION['username']?>" class="button">profile</a>
                 </li>
                 <li>
                     <i class="fas fa-bell"></i>
@@ -40,10 +40,10 @@
                         <img src="public/img/user.jpg">
                         <div class="opis">
                             <div class="nick">
-                                Armado
+                                <?=$user->getNick() ?>
                             </div>
                             <div class="name-surname">
-                                Adrian Aralski
+                                <?=$user->getName() ?>&nbsp;&nbsp;<?=$user->getSurname() ?>
                             </div>
                         </div>
                     </div>
@@ -54,12 +54,11 @@
                             </div>
                             <div class="organised-cruises-list">
                                 <ul>
-                                    <li>
-                                        Mazury
-                                    </li>
-                                    <li>
-                                        Morze Śródziemne
-                                    </li>
+                                <?php foreach($organised_cruises as $cruise): ?>
+                                            <li>
+                                                <a href="http://localhost:8080/cruise_description?id=<?=$cruise->getId()?>"><?=$cruise->getTitle()?></a>
+                                            </li>
+                                <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
@@ -113,11 +112,8 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-            
         </main>
     </div>
-        
 </body>

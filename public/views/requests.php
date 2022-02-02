@@ -21,7 +21,7 @@
                 </li>
                 <li>
                     <i class="fas fa-user"></i>
-                    <a href="http://localhost:8080/user_profile#" class="button">profile</a>
+                    <a href="http://localhost:8080/user_profile?id=<?=$_SESSION['username']?>" class="button">profile</a>
                 </li>
                 <li>
                     <i class="fas fa-bell"></i>
@@ -42,13 +42,11 @@
                         </div>
                         <div class="notifications-list">
                             <ul>
+                                <?php foreach($requests as $request): ?>
                                 <li>
-                                    <div class="ex">
-                                        <i class="fas fa-times"></i>
-                                    </div>
                                     <div class="texts-and-stuff">
                                         <div class="texts">
-                                            Jon Con zaprasza Cię do grona znajomych
+                                            <a href="http://localhost:8080/user_profile?id=<?=$request->getRequestingUserId()?>"><b><?=$request->getRequestingUserNick()?></b></a> asks to be a part of your cruise: <a href="http://localhost:8080/cruise_description?id=<?=$request->getCruiseId()?>"><b><?=$request->getCruiseTitle()?></b></a>
                                         </div>
                                         <div class="stuff">
                                             <div class="yes">
@@ -60,6 +58,7 @@
                                         </div>
                                     </div>
                                 </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                     </div>   

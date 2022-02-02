@@ -14,7 +14,7 @@ class CruiseRepository extends Repository
         if($cruise_id == false){
             return null;
         }
-        return new Cruise(
+         $cruise2=new Cruise(
             $cruise['title'],
             $cruise['start_date'],
             $cruise['end_date'],
@@ -29,8 +29,10 @@ class CruiseRepository extends Repository
             $cruise['image'],
             $cruise['xlocation'],
             $cruise['ylocation'],
-            $cruise['cruise_id']
+            $cruise['user_id']
         );
+        $cruise2->setId($cruise['cruise_id']);
+        return $cruise2;
 
     }
     public function addCruise(Cruise $cruise): void
@@ -41,10 +43,9 @@ class CruiseRepository extends Repository
                     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
         ');
 
-        $user_id=$_SESSION['username'];
         $stmt->execute([
             $cruise->getTitle(),
-            $user_id,
+            $cruise->getUserId(),
             $cruise->getStartDate(),
             $cruise->getEndDate(),
             $cruise->getBasin(),
@@ -71,7 +72,7 @@ class CruiseRepository extends Repository
         $cruises= $stmt->fetchAll((PDO::FETCH_ASSOC));
         foreach ($cruises as $cruise)
         {
-            $result[] = new Cruise(
+             $cruise2= new Cruise(
                 $cruise['title'],
                 $cruise['start_date'],
                 $cruise['end_date'],
@@ -86,13 +87,48 @@ class CruiseRepository extends Repository
                 $cruise['image'],
                 $cruise['xlocation'],
                 $cruise['ylocation'],
-                $cruise['cruise_id']
+                $cruise['user_id']
             );
+            $cruise2->setId($cruise['cruise_id']);
+            $result[]=$cruise2;
         }
         return $result;
 
     }
+    public function getCruisesByUserId(int $user_id): array
+    {
+        $result = [];
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM cruises WHERE user_id = :search
+        ');
+        $stmt->bindParam(':search', $user_id, PDO::PARAM_STR);
+        $stmt->execute();
+        $cruises= $stmt->fetchAll((PDO::FETCH_ASSOC));
+        foreach ($cruises as $cruise)
+        {
+            $cruise2= new Cruise(
+                $cruise['title'],
+                $cruise['start_date'],
+                $cruise['end_date'],
+                $cruise['basin'],
+                $cruise['free_places'],
+                $cruise['price'],
+                $cruise['place_of_embarkation'],
+                $cruise['time_of_embarkation'],
+                $cruise['place_of_disembarkation'],
+                $cruise['time_of_disembarkation'],
+                $cruise['description'],
+                $cruise['image'],
+                $cruise['xlocation'],
+                $cruise['ylocation'],
+                $cruise['user_id']
+            );
+            $cruise2->setId($cruise['cruise_id']);
+            $result[]=$cruise2;
+        }
+        return $result;
 
+    }
     public function getCruiseByTitle(string $searchString)
     {
         $searchString = '%' . strtolower($searchString) . '%';

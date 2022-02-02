@@ -31,7 +31,7 @@
                 </form>
             </div>
             <div class="login">
-                <button>LOGIN</button>
+                <a href="http://localhost:8080/login">LOGIN</a>
             </div>
 
         </div>
