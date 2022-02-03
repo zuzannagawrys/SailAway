@@ -5,7 +5,7 @@ require_once __DIR__.'/../repository/CruiseRepository.php';
 require_once __DIR__.'/../repository/UserRepository.php';
 require_once __DIR__.'/../repository/RequestRepository.php';
 require_once __DIR__.'/../repository/NotificationRepository.php';
-class RequestController extends AppController
+class NotificationController extends AppController
 {
     const MAX_FILE_SIZE = 1024 * 1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
@@ -26,32 +26,21 @@ class RequestController extends AppController
         $this->notificationRepository = new NotificationRepository();
     }
 
-    public function requests()
+    public function notifications()
     {
         $user_id = $_SESSION['username'];
-        $requests = $this->requestRepository->getRequestsToUserBroader($user_id);
-        return $this->render('requests', ['messages' => $this->message, 'requests' => $requests]);
+        $notifications = $this->notificationRepository->getNotificationToUserBroader($user_id);
+        return $this->render('notifications', ['messages' => $this->message, 'notifications' => $notifications]);
 
     }
-    public function requestAccepted()
+
+    public function removeNotification()
     {
         $id=$_GET['id'];
         $id=substr($id, 1);
-        [$requesting_user_id,$cruise_id]=explode('a', $id, 2);
+        [$notifying_user_id,$cruise_id]=explode('a', $id, 2);
         $user_id = $_SESSION['username'];
-        $this->notificationRepository->addNotification($requesting_user_id,$user_id,$cruise_id,true);
-        $this->userRepository->addParticipatedCruise($cruise_id,$requesting_user_id);
-        $this->cruiseRepository->decreaseFreePlaces($cruise_id);
-        $this->requestRepository->deleteRequest($requesting_user_id,$user_id,$cruise_id);
-    }
-    public function requestDenied()
-    {
-        $id=$_GET['id'];
-        $id=substr($id, 1);
-        [$requesting_user_id,$cruise_id]=explode('a', $id, 2);
-        $user_id = $_SESSION['username'];
-        $this->notificationRepository->addNotification($requesting_user_id,$id,$cruise_id,false);
-        $this->requestRepository->deleteRequest($requesting_user_id,$user_id,$cruise_id);
+        $this->notificationRepository->deleteNotification($user_id,$notifying_user_id,$cruise_id);
     }
 
 }

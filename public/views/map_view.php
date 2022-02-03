@@ -117,8 +117,8 @@
                                     coordinates: [<?=$cruise->getXlocation() ?>, <?=$cruise->getYlocation() ?>]
                                 },
                                 properties: {
-                                    title: '<?=$cruise->getTitle() ?>',
-                                    description: 'Dates:<?=$cruise->getStartDate() ?> - <?=$cruise->getEndDate() ?><br />Basin:<?=$cruise->getBasin() ?><br />Free spots: <?=$cruise->getFreePlaces() ?><br />Price per person: <?=$cruise->getPrice() ?><br />Place of embarkation: <?=$cruise->getPlaceOfEmbarkation() ?><br />Time of embarkation: <?=$cruise->getTimeOfEmbarkation() ?><br />Place of disembarkation: <?=$cruise->getPlaceOfDisembarkation() ?><br />Time of disembarkation: <?=$cruise->getTimeOfDisembarkation() ?>'
+                                    title: '<?=$cruise->getId() ?>',
+                                    description: '<b><?=$cruise->getTitle() ?><b><br />Dates:<?=$cruise->getStartDate() ?> - <?=$cruise->getEndDate() ?><br />Basin:<?=$cruise->getBasin() ?><br />Free spots: <?=$cruise->getFreePlaces() ?><br />Price per person: <?=$cruise->getPrice() ?><br />Place of embarkation: <?=$cruise->getPlaceOfEmbarkation() ?><br />Time of embarkation: <?=$cruise->getTimeOfEmbarkation() ?><br />Place of disembarkation: <?=$cruise->getPlaceOfDisembarkation() ?><br />Time of disembarkation: <?=$cruise->getTimeOfDisembarkation() ?>'
                                 }
                             },
                             <?php endforeach; ?>
@@ -159,14 +159,14 @@
                             closeOnClick: false,
                             offset: 25 }) // add popups
                             .setHTML(
-                                `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                                `<p>${feature.properties.description}</p>`
                             );
                         const element = marker.getElement();
                         element.id = 'marker';
                         element.addEventListener('mouseenter', () => popup.addTo(map));
                         element.addEventListener('mouseleave', () => popup.remove());
                         element.addEventListener('click', event => {
-                            window.location.href = 'http://localhost:8080/cruise_description?id=<?=$cruise->getId() ?>';
+                            window.location.href = `http://localhost:8080/cruise_description?id=${feature.properties.title}`;
                         });
                         marker.setPopup(popup);
                         marker.addTo(map);

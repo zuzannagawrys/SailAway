@@ -60,4 +60,16 @@ class UserRepository extends Repository
             $user->getNick()
         ]);
     }
+    public function addParticipatedCruise(int $cruise_id, int $user_id )
+    {
+
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO participated_cruises (cruise_id,user_id)
+            VALUES (?, ?) ON CONFLICT DO NOTHING
+        ');
+        $stmt->execute([
+            $cruise_id,
+            $user_id
+        ]);
+    }
 }

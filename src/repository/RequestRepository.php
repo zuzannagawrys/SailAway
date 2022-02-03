@@ -35,6 +35,17 @@ class RequestRepository extends Repository
             $request['cruise_id']
         );
     }
+    public function deleteRequest(int $requesting_user_id, int $requested_user_id, int $cruise_id)
+    {
+        $stmt= $this->database->connect()->prepare(
+            'DELETE FROM public.requests WHERE (requesting_user_id=:requesting_user_id AND requested_user_id =:requested_user_id AND cruise_id=:cruise_id)'
+        );
+        $stmt->bindParam(':requesting_user_id',$requesting_user_id,PDO::PARAM_STR);
+        $stmt->bindParam(':requested_user_id',$requested_user_id,PDO::PARAM_STR);
+        $stmt->bindParam(':cruise_id',$cruise_id,PDO::PARAM_STR);
+        $stmt->execute();
+
+    }
     public function getRequestsToUser(int $requested_user_id): array
     {
         $result = [];
@@ -82,7 +93,7 @@ class RequestRepository extends Repository
 
         $stmt = $this->database->connect()->prepare('
             INSERT INTO requests (requesting_user_id, requested_user_id, cruise_id)
-            VALUES (?, ?, ?)
+            VALUES (?, ?, ?) ON CONFLICT DO NOTHING
         ');
         $stmt->execute([
             $request->getRequestingUserId(),

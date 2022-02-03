@@ -162,4 +162,12 @@ class CruiseRepository extends Repository
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function decreaseFreePlaces($cruise_id)
+    {
+        $stmt = $this->database->connect()->prepare('
+            UPDATE cruises SET free_places = free_places-1 WHERE cruises.cruise_id = :cruise_id
+        ');
+        $stmt->bindParam(':cruise_id', $cruise_id, PDO::PARAM_STR);
+        $stmt->execute();
+    }
 }

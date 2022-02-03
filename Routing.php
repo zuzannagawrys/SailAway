@@ -5,6 +5,7 @@ require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/CruiseController.php';
 require_once 'src/controllers/UserController.php';
 require_once 'src/controllers/RequestController.php';
+require_once 'src/controllers/NotificationController.php';
 
 class Router {
 
