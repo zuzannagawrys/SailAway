@@ -29,3 +29,5 @@ The owner of the cruise will see in his requests site that you applied for it. H
 ![map](./screenshots/4.png)
 In your notifications you can check if your request has been confirmed or rejected. If it's confirmed you will get an email of your future captain.
 ![map](./screenshots/5.png)
+ You can create your own cruise by clicking *add cruise button*
+ ![map](./screenshots/6.png)
