@@ -35,6 +35,9 @@ class CruiseRepository extends Repository
         return $cruise2;
 
     }
+
+
+
     public function addCruise(Cruise $cruise): void
     {
         $date = new DateTime();
@@ -62,6 +65,9 @@ class CruiseRepository extends Repository
             $cruise->getYLocation()
         ]);
     }
+
+
+
     public function getCruises(): array
     {
         $result = [];
@@ -95,6 +101,9 @@ class CruiseRepository extends Repository
         return $result;
 
     }
+
+
+
     public function getCruisesByUserId(int $user_id): array
     {
         $result = [];
@@ -129,6 +138,9 @@ class CruiseRepository extends Repository
         return $result;
 
     }
+
+
+
     public function getCruiseByTitle(string $searchString)
     {
         $searchString = '%' . strtolower($searchString) . '%';
@@ -141,6 +153,9 @@ class CruiseRepository extends Repository
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
+
     public function getCruiseById(int $id)
     {
 
@@ -152,16 +167,22 @@ class CruiseRepository extends Repository
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function getCruiseByStartDate(string $date)
+
+
+
+    public function getCruiseByNumberOfDays(int $number_of_days)
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM cruises WHERE cruises.start_date = :search
+            SELECT * FROM cruises WHERE cruises.number_of_days = :number_of_days
         ');
-        $stmt->bindParam(':search', $date, PDO::PARAM_STR);
+        $stmt->bindParam(':number_of_days', $number_of_days, PDO::PARAM_STR);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
+
     public function decreaseFreePlaces($cruise_id)
     {
         $stmt = $this->database->connect()->prepare('

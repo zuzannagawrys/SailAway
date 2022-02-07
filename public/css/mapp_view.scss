@@ -1,4 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 75vw;
+}
+.marker {
+    background-image: url("public/img/jachcik.png");
+    background-size: cover;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    /*border-radius: 50%;*/
+    cursor: pointer;
+}
+.mapboxgl-popup {
+    max-width: 300px;
+    padding: 0.5em;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Playfair Display';
+    font-size: larger;
+    background-color: #302618;
+    color: whitesmoke;
+}
 body{
     background: whitesmoke;
     margin:0;
@@ -9,15 +42,6 @@ body{
     display: flex;
     height: auto;
     flex-direction: column;
-    .navbar
-    {
-        background: transparent linear-gradient(180deg, #346795 0%, #1A3168 100%) 0% 0% no-repeat padding-box;
-        padding: 1em;
-        display:flex;
-        place-content: space-between;
-        flex-direction: column;
-        box-shadow: 0px 3px 6px #00000029;
-        box-sizing: border-box;
         .add-project {
             text-decoration: none;
             background: #302618 0% 0% no-repeat padding-box;
@@ -31,7 +55,10 @@ body{
             width: 80%;
             cursor: pointer;
         }
-        
+        .add-project:hover {
+            background: #B7A677 0% 0% no-repeat padding-box;
+            color: #302618;
+        }
         .add-project>i {
             padding: 1em 1em;
         }
@@ -133,9 +160,13 @@ body{
                 
 
             }
+            li:hover {
+                .button {
+                    border-bottom: 1px solid whitesmoke;
+                    padding-left: 2.5em;
+                }
+            }
         }
-
-    }
     main{
         display: flex;
         flex-direction: column;
@@ -218,22 +249,9 @@ body{
         justify-content: flex-start;
         flex-direction: row;
         height: 100vh;
-        .navbar{
-            width: 25vw;
-            height:100%;
-            position:fixed;
-            ul{
-                li{
-                    i{
-                        margin-right:1em;
-                    }
-        
-                }
-            }
-        }
         main{
-            width:75vw;
-            margin-left: 25vw;
+            width:80vw;
+            margin-left: 22.3vw;
             height: 100%;
     }
     }

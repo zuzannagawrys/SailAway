@@ -7,14 +7,10 @@ require_once 'UserRepository.php';
 require_once 'CruiseRepository.php';
 class NotificationRepository extends Repository
 {
-    private $cruiseRepository;
-    private $userRepository;
 
     public function __construct()
     {
         parent::__construct();
-        $this->cruiseRepository = new CruiseRepository();
-        $this->userRepository = new UserRepository();
     }
     public function deleteNotification(int $notified_user_id, int $notifying_user_id, int $cruise_id)
     {
@@ -31,28 +27,26 @@ class NotificationRepository extends Repository
     {
         $result = [];
         $stmt= $this->database->connect()->prepare(
-            'SELECT * FROM public.notifications WHERE notified_user_id =:notified_user_id '
+            'SELECT n.notified_user_id, n.notifying_user_id, n.cruise_id, n.accepted, u.nick, u.email, c.title FROM notifications n LEFT JOIN cruises c on c.cruise_id = n.cruise_id LEFT JOIN users u on u.user_id = n.notified_user_id WHERE notified_user_id =:notified_user_id '
         );
         $stmt->bindParam(':notified_user_id',$notified_user_id,PDO::PARAM_STR);
         $stmt->execute();
         $notifications= $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($notifications as $notification)
         {
-            $user=$this->userRepository->getUserById($notification['notifying_user_id']);
-            $cruise=$this->cruiseRepository->getCruise($notification['cruise_id']);
             $result[]= new NotificationBroader(
                 $notification['notified_user_id'],
                 $notification['notifying_user_id'],
                 $notification['cruise_id'],
-                $user->getNick(),
-                $user->getEmail(),
-                $cruise->getTitle(),
+                $notification['nick'],
+                $notification['email'],
+                $notification['title'],
                 $notification['accepted']
             );
         }
         return $result;
     }
-    public function addNotification(int $notified_user_id, int $notifying_user_id, int $cruise_id, bool $accepted)
+    public function addNotification(int $notified_user_id, int $notifying_user_id, int $cruise_id, int $accepted)
     {
 
         $stmt = $this->database->connect()->prepare('

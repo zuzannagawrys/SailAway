@@ -16,25 +16,7 @@ body {
           flex-direction: column;
 }
 
-.base-container .navbar {
-  background: transparent -webkit-gradient(linear, left top, left bottom, from(#346795), to(#1A3168)) 0% 0% no-repeat padding-box;
-  background: transparent linear-gradient(180deg, #346795 0%, #1A3168 100%) 0% 0% no-repeat padding-box;
-  padding: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  place-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-shadow: 0px 3px 6px #00000029;
-          box-shadow: 0px 3px 6px #00000029;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.base-container .navbar .add-project {
+.base-container .add-project {
   text-decoration: none;
   background: #302618 0% 0% no-repeat padding-box;
   -webkit-box-shadow: 0px 3px 6px #00000029;
@@ -51,16 +33,21 @@ body {
   cursor: pointer;
 }
 
-.base-container .navbar .add-project > i {
+.base-container .add-project:hover {
+  background: #B7A677 0% 0% no-repeat padding-box;
+  color: #302618;
+}
+
+.base-container .add-project > i {
   padding: 1em 1em;
 }
 
-.base-container .navbar .logo {
+.base-container .logo {
   width: 200px;
   margin: 2em auto;
 }
 
-.base-container .navbar ul {
+.base-container ul {
   list-style-type: none;
   font: normal normal normal 20px/27px TimesNewRoman;
   letter-spacing: 0.72px;
@@ -72,7 +59,7 @@ body {
   padding: 0;
 }
 
-.base-container .navbar ul li {
+.base-container ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,7 +72,7 @@ body {
   margin-bottom: 1em;
 }
 
-.base-container .navbar ul li i {
+.base-container ul li i {
   font-size: 1.5em;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -93,7 +80,7 @@ body {
   width: 15%;
 }
 
-.base-container .navbar ul li .button {
+.base-container ul li .button {
   border-bottom: 1px solid whitesmoke;
   letter-spacing: 0.72px;
   color: whitesmoke;
@@ -101,7 +88,7 @@ body {
   width: 100%;
 }
 
-.base-container .navbar ul li .search-bar {
+.base-container ul li .search-bar {
   width: 100%;
   margin-left: 0.5em;
   -ms-flex-item-align: center;
@@ -109,23 +96,23 @@ body {
       align-self: center;
 }
 
-.base-container .navbar ul li .search-bar ::-webkit-input-placeholder {
+.base-container ul li .search-bar ::-webkit-input-placeholder {
   color: whitesmoke;
 }
 
-.base-container .navbar ul li .search-bar :-ms-input-placeholder {
+.base-container ul li .search-bar :-ms-input-placeholder {
   color: whitesmoke;
 }
 
-.base-container .navbar ul li .search-bar ::-ms-input-placeholder {
+.base-container ul li .search-bar ::-ms-input-placeholder {
   color: whitesmoke;
 }
 
-.base-container .navbar ul li .search-bar ::placeholder {
+.base-container ul li .search-bar ::placeholder {
   color: whitesmoke;
 }
 
-.base-container .navbar ul li .search-bar input {
+.base-container ul li .search-bar input {
   background: transparent 0% 0% no-repeat padding-box;
   border: none;
   width: 100%;
@@ -138,7 +125,7 @@ body {
           box-sizing: border-box;
 }
 
-.base-container .navbar ul li .dates {
+.base-container ul li .dates {
   width: 100%;
   margin-left: 0.5em;
   -ms-flex-item-align: center;
@@ -146,7 +133,7 @@ body {
       align-self: center;
 }
 
-.base-container .navbar ul li .dates > form > input {
+.base-container ul li .dates > form > input {
   background: transparent 0% 0% no-repeat padding-box;
   border: none;
   width: 45%;
@@ -159,7 +146,7 @@ body {
           box-sizing: border-box;
 }
 
-.base-container .navbar ul li .spots {
+.base-container ul li .spots {
   width: 100%;
   margin-left: 0.5em;
   -ms-flex-item-align: center;
@@ -167,23 +154,23 @@ body {
       align-self: center;
 }
 
-.base-container .navbar ul li .spots ::-webkit-input-placeholder {
+.base-container ul li .spots ::-webkit-input-placeholder {
   color: whitesmoke;
 }
 
-.base-container .navbar ul li .spots :-ms-input-placeholder {
+.base-container ul li .spots :-ms-input-placeholder {
   color: whitesmoke;
 }
 
-.base-container .navbar ul li .spots ::-ms-input-placeholder {
+.base-container ul li .spots ::-ms-input-placeholder {
   color: whitesmoke;
 }
 
-.base-container .navbar ul li .spots ::placeholder {
+.base-container ul li .spots ::placeholder {
   color: whitesmoke;
 }
 
-.base-container .navbar ul li .spots > form > input {
+.base-container ul li .spots > form > input {
   background: transparent 0% 0% no-repeat padding-box;
   border: none;
   width: 100%;
@@ -196,10 +183,15 @@ body {
           box-sizing: border-box;
 }
 
-.base-container .navbar ul li a {
+.base-container ul li a {
   text-decoration: none;
   display: inline-block;
   line-height: 2em;
+}
+
+.base-container ul li:hover .button {
+  border-bottom: 1px solid whitesmoke;
+  padding-left: 2.5em;
 }
 
 .base-container main {
@@ -321,17 +313,9 @@ body {
             flex-direction: row;
     height: 100vh;
   }
-  .base-container .navbar {
-    width: 25vw;
-    height: 100%;
-    position: fixed;
-  }
-  .base-container .navbar ul li i {
-    margin-right: 1em;
-  }
   .base-container main {
-    width: 75vw;
-    margin-left: 25vw;
+    width: 80vw;
+    margin-left: 22.3vw;
     height: 100%;
   }
 }

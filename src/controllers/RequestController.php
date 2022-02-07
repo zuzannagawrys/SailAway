@@ -40,7 +40,8 @@ class RequestController extends AppController
         [$requesting_user_id,$cruise_id]=explode('a', $id, 2);
         $user_id = $_SESSION['username'];
         $this->notificationRepository->addNotification($requesting_user_id,$user_id,$cruise_id,true);
-        $this->userRepository->addParticipatedCruise($cruise_id,$requesting_user_id);
+        $cruise=$this->cruiseRepository->getCruise($cruise_id);
+        $this->userRepository->addParticipatedCruise($cruise_id,$requesting_user_id, $cruise->getTitle());
         $this->cruiseRepository->decreaseFreePlaces($cruise_id);
         $this->requestRepository->deleteRequest($requesting_user_id,$user_id,$cruise_id);
     }
@@ -50,7 +51,7 @@ class RequestController extends AppController
         $id=substr($id, 1);
         [$requesting_user_id,$cruise_id]=explode('a', $id, 2);
         $user_id = $_SESSION['username'];
-        $this->notificationRepository->addNotification($requesting_user_id,$id,$cruise_id,false);
+        $this->notificationRepository->addNotification($requesting_user_id,$user_id,$cruise_id,false);
         $this->requestRepository->deleteRequest($requesting_user_id,$user_id,$cruise_id);
     }
 

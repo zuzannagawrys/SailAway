@@ -12,6 +12,7 @@ $path = parse_url( $path, PHP_URL_PATH);
 
 Router::get('', 'DefaultController');
 Router::get('login', 'DefaultController');
+Router::get('logout', 'SecurityController');
 Router::get('index', 'DefaultController');
 Router::get('registration', 'DefaultController');
 Router::get('map_view', 'CruiseController');
@@ -27,5 +28,6 @@ Router::post('login', 'SecurityController');
 Router::post('registration', 'SecurityController');
 Router::post('addCruise', 'CruiseController');
 Router::post('search', 'CruiseController');
-Router::post('searchStartDate', 'CruiseController');
+Router::post('searchNumberOfDays', 'CruiseController');
+Router::post('editImage', 'UserController');
 Router::run($path);

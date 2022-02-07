@@ -39,6 +39,21 @@ class SecurityController extends AppController
         header("Location: {$url}/map_view");
         die();
     }
+    public function logout()
+    {
+        $_SESSION = array();
+
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
+
+        session_destroy();
+        $this->render('login', ['messages'=>["Logout successful!"]]);
+    }
     public function registration()
     {
         if (!($this->isPost())) {
@@ -56,7 +71,6 @@ class SecurityController extends AppController
             return $this->render('registration', ['messages' => ['Please provide proper password']]);
         }
 
-        //TODO try to use better hash function
         $user = new User($email, md5($password), $name, $surname,$username);
 
         $this->userRepository->addUser($user);

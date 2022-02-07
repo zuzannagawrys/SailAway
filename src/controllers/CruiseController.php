@@ -59,17 +59,16 @@ class CruiseController extends AppController
             echo json_encode($this->cruiseRepository->getCruiseByTitle($decoded['search']));
         }
     }
-    public function searchStartDate()
+    public function searchNumberOfDays()
     {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
         if ($contentType === "application/json") {
             $content = trim(file_get_contents("php://input"));
             $decoded = json_decode($content, true);
-
             header('Content-type: application/json');
             http_response_code(200);
-            echo json_encode($this->cruiseRepository->getCruiseByStartDate($decoded['search']));
+            echo json_encode($this->cruiseRepository->getCruiseByNumberOfDays($decoded['search']));
         }
     }
     public function applyForCruise()

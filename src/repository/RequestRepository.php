@@ -7,14 +7,10 @@ require_once 'UserRepository.php';
 require_once 'CruiseRepository.php';
 class RequestRepository extends Repository
 {
-    private $cruiseRepository;
-    private $userRepository;
 
     public function __construct()
     {
         parent::__construct();
-        $this->cruiseRepository = new CruiseRepository();
-        $this->userRepository = new UserRepository();
     }
     public function getRequest(int $requesting_user_id, int $requested_user_id, int $cruise_id): ?Request
     {
@@ -69,21 +65,19 @@ class RequestRepository extends Repository
     {
         $result = [];
         $stmt= $this->database->connect()->prepare(
-            'SELECT * FROM public.requests WHERE requested_user_id =:requested_user_id '
+            'SELECT u.nick, c.title, r.requesting_user_id, r.requested_user_id, r.cruise_id FROM requests r JOIN users u ON r.requesting_user_id=u.user_id JOIN cruises c ON c.cruise_id = r.cruise_id WHERE r.requested_user_id =:requested_user_id '
         );
         $stmt->bindParam(':requested_user_id',$requested_user_id,PDO::PARAM_STR);
         $stmt->execute();
         $requests= $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($requests as $request)
         {
-            $user=$this->userRepository->getUserById($request['requesting_user_id']);
-            $cruise=$this->cruiseRepository->getCruise($request['cruise_id']);
             $result[]= new RequestBroader(
                 $request['requesting_user_id'],
                 $request['requested_user_id'],
                 $request['cruise_id'],
-                $user->getNick(),
-                $cruise->getTitle()
+                $request['nick'],
+                $request['title']
             );
         }
         return $result;

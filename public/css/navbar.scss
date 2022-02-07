@@ -1,0 +1,102 @@
+.navbar{
+    width:100%;
+    background: transparent linear-gradient(180deg, #346795 0%, #1A3168 100%) 0% 0% no-repeat padding-box;
+    padding: 1em;
+    display:flex;
+    place-content: space-between;
+    flex-direction: column;
+    box-shadow: 0px 3px 6px #00000029;
+    box-sizing: content-box;
+    .add-project {
+        text-decoration:none;
+        background: #302618 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #00000029;
+        margin-top: 2em;
+        align-self: center;
+        border-radius: 1.5em;
+        color: #B7A677;
+        letter-spacing: 0.1em;
+        text-align: center;
+        width: 80%;
+        cursor: pointer;
+    }
+    .add-project:hover {
+        background: #B7A677 0% 0% no-repeat padding-box;
+        color: #302618;
+    }
+
+    .add-project>i {
+        padding: 1em 1em;
+    }
+    .logo{
+        width: 200px;
+        margin: 2em auto;
+
+    }
+    ul{
+        list-style-type: none;
+        font: normal normal normal 20px/27px TimesNewRoman;
+        letter-spacing: 0.72px;
+        color: whitesmoke;
+        height: 100%;
+        width: calc(100% - 40px);
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+        li {
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            color: whitesmoke;
+            margin-bottom: 1em;
+            i {
+                font-size: 1.5em;
+                align-self:center;
+                width:15%
+            }
+            a {
+                text-decoration: none;
+                display: inline-block;
+                line-height: 2em;
+            }
+            .button {
+                border-bottom: 1px solid whitesmoke;
+                letter-spacing: 0.72px;
+                color: whitesmoke;
+                padding: 0.2rem;
+                width: 100%;
+            }
+            
+        }
+        li:hover {
+            .button {
+                border-bottom: 1px solid whitesmoke;
+                padding-left: 2.5em;
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 768px) {
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 18px;
+        
+    }
+
+    .navbar{
+        width: 20vw;
+        height: 100%;
+        position:fixed;
+        ul{
+            li{
+                i{
+                    margin-right:1em;
+                }
+    
+            }
+        }
+    }
+}
