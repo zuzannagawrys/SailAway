@@ -54,56 +54,6 @@
 </head>
 <body>
     <div class="base-container">
-        <!-- <nav class="navbar">
-            <a href="http://localhost:8080/addCruise" class="add-project">
-                <i class="fas fa-plus"></i>
-                add cruise
-            </a>
-            <img src="public/img/logo.svg" class="logo">
-            <ul> -->
-<!--                <li>-->
-<!--                    <i class="fas fa-search"></i>-->
-<!--                    <div class="search-bar">-->
-<!--                            <input placeholder="search basin">-->
-<!--                    </div>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <i class="far fa-calendar-alt"></i>-->
-<!--                    <div class="dates">-->
-<!--                        <form>-->
-<!--                            <input name="startDate" type="date" placeholder="start date">-<input name="endDate" type="date" placeholder="end date">-->
-<!--                        </form>-->
-<!--                    </div>-->
-<!--                </li>-->
-<!--                <li>-->
-<!--                    <i class="fas fa-mitten"></i>-->
-<!--                    <div class="spots">-->
-<!--                            <input name="numberOfDays" type="number" placeholder="type number of days">-->
-<!--                    </div>-->
-<!--                </li>-->
-                <!-- <li>
-                    <i class="fas fa-map-marked-alt"></i>
-                    <a href="http://localhost:8080/map_view#" class="button">map</a>
-                </li>
-                <li>
-                    <i class="fas fa-user"></i>
-                    <a href="http://localhost:8080/user_profile?id=<?=$_SESSION['username']?>" class="button">profile</a>
-                </li>
-                <li>
-                    <i class="fas fa-bell"></i>
-                    <a href="http://localhost:8080/notifications" class="button">notifications</a>
-                </li>
-                <li>
-                    <i class="fas fa-hand-point-right"></i>
-                    <a href="http://localhost:8080/requests" class="button">requests</a>
-                </li>
-                <li>
-                    <i class="fas fa-sign-out-alt"></i>
-                    <a href="http://localhost:8080/logout" class="button">logout</a>
-                </li>
-            </ul>
-        
-        </nav> -->
         <?php include('navbar.php') ?>
         <main>
             <section class="map">
@@ -173,40 +123,3 @@
         </main>
     </div>
 </body>
-<!--<template id="cruise-template">-->
-<!--    <div id="">-->
-<!--        <div class="title">-->
-<!--            title-->
-<!--        </div>-->
-<!--        <div class="dates">-->
-<!--            <div class="start_date">-->
-<!--                start_date-->
-<!--            </div>-->
-<!--            --->
-<!--            <div class="end_date">-->
-<!--                end_date-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="basin">-->
-<!--            basin-->
-<!--        </div>-->
-<!--        <div class="free_places">-->
-<!--            free_places-->
-<!--        </div>-->
-<!--        <div class="price">-->
-<!--            price-->
-<!--        </div>-->
-<!--        <div class="place_of_embarkation">-->
-<!--            place_of_embarkation-->
-<!--        </div>-->
-<!--        <div class="time_of_embarkation">-->
-<!--            time_of_embarkation-->
-<!--        </div>-->
-<!--        <div class="place_of_disembarkation">-->
-<!--            place_of_disembarkation-->
-<!--        </div>-->
-<!--        <div class="time_of_disembarkation">-->
-<!--            time_of_disembarkation-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</template>-->

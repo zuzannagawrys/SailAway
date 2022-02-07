@@ -65,7 +65,7 @@ class RequestRepository extends Repository
     {
         $result = [];
         $stmt= $this->database->connect()->prepare(
-            'SELECT u.nick, c.title, r.requesting_user_id, r.requested_user_id, r.cruise_id FROM requests r JOIN users u ON r.requesting_user_id=u.user_id JOIN cruises c ON c.cruise_id = r.cruise_id WHERE r.requested_user_id =:requested_user_id '
+            'SELECT u.nick, c.title, r.requesting_user_id, r.requested_user_id, r.cruise_id FROM requests r LEFT JOIN users u ON r.requesting_user_id=u.user_id LEFT JOIN cruises c ON c.cruise_id = r.cruise_id WHERE r.requested_user_id =:requested_user_id '
         );
         $stmt->bindParam(':requested_user_id',$requested_user_id,PDO::PARAM_STR);
         $stmt->execute();

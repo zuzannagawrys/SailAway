@@ -35,8 +35,8 @@
                             <div class="captain-description">
                                 Captain
                             </div>
-                            <a href="#" class="profile">
-                                <img src="public/img/user.jpg">
+                            <a href="http://localhost:8080/user_profile?id=<?=$user->getId()?>" class="profile">
+                                <img src="<?=$user->getImage()?>">
                                 <?=$user->getNick() ?>
                             </a>
                             <div class="cruise-important-information-description">

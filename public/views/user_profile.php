@@ -13,9 +13,6 @@
         <main>
             <div class="background">
                 <div class="inner-background">
-                    <div class="change-image">
-                        change image
-                    </div>
                     <div class="picture-and-description">
                         <img src=<?=$user->getImage() ?>>
                         <div class="opis">
@@ -57,40 +54,6 @@
                             </div>
                         </div>
                     </div>
-<!--                    <div class="past-friends">-->
-<!--                        <div class="past-cruises">-->
-<!--                            <div class="past-cruises-description">-->
-<!--                                Past Cruises-->
-<!--                            </div>-->
-<!--                            <div class="past-cruises-list">-->
-<!--                                <ul>-->
-<!--                                    <li>-->
-<!--                                        Mazury-->
-<!--                                    </li>-->
-<!--                                    <li>-->
-<!--                                        Morze Śródziemne-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="friends">-->
-<!--                            <div class="friends-description">-->
-<!--                                Friends-->
-<!--                            </div>-->
-<!--                            <div class="friends-list">-->
-<!--                                <ul>-->
-<!--                                    <li>-->
-<!--                                        <img src=public/img/user.jpg>-->
-<!--                                        Midimo-->
-<!--                                    </li>-->
-<!--                                    <li>-->
-<!--                                        <img src=public/img/user.jpg>-->
-<!--                                        John Con-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
                 </div>
             </div>
         </main>
