@@ -31,3 +31,6 @@ In your notifications you can check if your request has been confirmed or reject
 ![map](./screenshots/5.png)
  You can create your own cruise by clicking *add cruise button*
  ![map](./screenshots/6.png)
+ 
+ ## Diagram ERD projektu
+ ![map](./screenshots/7.png)
