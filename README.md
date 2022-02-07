@@ -18,3 +18,14 @@ If you are an user simply register, log in and have fun!
 ## Funcionalities
 After succesfully registering and logging you will see a map with cruises placed on it
 ![map](./screenshots/1.png)
+
+If you hover over the cruise you can see the details of the cruise 
+![map](./screenshots/2.png)
+
+When you click on the cruise you can see it's full description You can apply to get on a cruise with the *apply for spot* button.
+![map](./screenshots/3.png)
+
+The owner of the cruise will see in his requests site that you applied for it. He can Either reject or confirm it by clicking one of the buttons on the right
+![map](./screenshots/4.png)
+In your notifications you can check if your request has been confirmed or rejected. If it's confirmed you will get an email of your future captain.
+![map](./screenshots/5.png)
