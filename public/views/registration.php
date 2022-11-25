@@ -31,7 +31,7 @@
                 </form>
             </div>
             <div class="login">
-                <a href="http://localhost:8080/login">LOGIN</a>
+                <a href="https://sail-away.azurewebsites.net/login">LOGIN</a>
             </div>
 
         </div>

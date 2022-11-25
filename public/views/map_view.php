@@ -111,7 +111,7 @@
                             element.addEventListener('mouseenter', () => popup.addTo(map));
                             element.addEventListener('mouseleave', () => popup.remove());
                             element.addEventListener('click', event => {
-                                window.location.href = `http://localhost:8080/cruise_description?id=${feature.properties.title}`;
+                                window.location.href = `https://sail-away.azurewebsites.net/cruise_description?id=${feature.properties.title}`;
                             });
                             marker.setPopup(popup);
                             marker.addTo(map);

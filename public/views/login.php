@@ -27,7 +27,7 @@
                 </form>
             </div>
             <div class="registration">
-                <a href="http://localhost:8080/registration">REGISTRATION</a>
+                <a href="https://sail-away.azurewebsites.net/registration">REGISTRATION</a>
             </div>
         </div>
     </div>

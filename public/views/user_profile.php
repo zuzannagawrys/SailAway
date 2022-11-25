@@ -33,7 +33,7 @@
                                 <ul>
                                 <?php foreach($organised_cruises as $cruise): ?>
                                             <li>
-                                                <a href="http://localhost:8080/cruise_description?id=<?=$cruise->getId()?>"><?=$cruise->getTitle()?></a>
+                                                <a href="https://sail-away.azurewebsites.net/cruise_description?id=<?=$cruise->getId()?>"><?=$cruise->getTitle()?></a>
                                             </li>
                                 <?php endforeach; ?>
                                 </ul>
