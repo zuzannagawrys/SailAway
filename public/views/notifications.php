@@ -26,9 +26,9 @@
                                     </div>
                                     <div class="notifications-text">
                                         <?php if ($notification->isAccepted()): ?>
-                                            <a href="https://sail-away.azurewebsites.net/user_profile?id=<?=$notification->getNotifyingUserId()?>"><b><?=$notification->getNotifyingUserNick()?></b></a> has accepted you as a crewman for their cruise: <a href="https://sail-away.azurewebsites.net/cruise_description?id=<?=$notification->getCruiseId()?>"><b><?=$notification->getCruiseTitle()?></b></a> for further information please contact this email <b><?=$notification->getNotifyingUserEmail()?></b>
+                                            <a href="http://20.16.165.177/user_profile?id=<?=$notification->getNotifyingUserId()?>"><b><?=$notification->getNotifyingUserNick()?></b></a> has accepted you as a crewman for their cruise: <a href="http://20.16.165.177/cruise_description?id=<?=$notification->getCruiseId()?>"><b><?=$notification->getCruiseTitle()?></b></a> for further information please contact this email <b><?=$notification->getNotifyingUserEmail()?></b>
                                         <?php else: ?>
-                                            <a href="https://sail-away.azurewebsites.net/user_profile?id=<?=$notification->getNotifyingUserId()?>"><b><?=$notification->getNotifyingUserNick()?></b></a> has not accepted you as a crewman for their cruise: <a href="https://sail-away.azurewebsites.net/cruise_description?id=<?=$notification->getCruiseId()?>"><b><?=$notification->getCruiseTitle()?></b></a>. See you next time.
+                                            <a href="http://20.16.165.177/user_profile?id=<?=$notification->getNotifyingUserId()?>"><b><?=$notification->getNotifyingUserNick()?></b></a> has not accepted you as a crewman for their cruise: <a href="http://20.16.165.177/cruise_description?id=<?=$notification->getCruiseId()?>"><b><?=$notification->getCruiseTitle()?></b></a>. See you next time.
                                         <?php endif ?>
                                     </div>
                                 </li>

@@ -23,7 +23,7 @@
                                 <li>
                                     <div class="texts-and-stuff">
                                         <div class="texts">
-                                            <a href="https://sail-away.azurewebsites.net/user_profile?id=<?=$request->getRequestingUserId()?>"><b><?=$request->getRequestingUserNick()?></b></a> asks to be a part of your cruise: <a href="https://sail-away.azurewebsites.net/cruise_description?id=<?=$request->getCruiseId()?>"><b><?=$request->getCruiseTitle()?></b></a>
+                                            <a href="http://20.16.165.177/user_profile?id=<?=$request->getRequestingUserId()?>"><b><?=$request->getRequestingUserNick()?></b></a> asks to be a part of your cruise: <a href="http://20.16.165.177/cruise_description?id=<?=$request->getCruiseId()?>"><b><?=$request->getCruiseTitle()?></b></a>
                                         </div>
                                         <div class="stuff">
                                             <div id="b<?=$request->getRequestingUserId()?>a<?=$request->getCruiseId()?>" class="yes">

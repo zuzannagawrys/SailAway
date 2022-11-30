@@ -35,7 +35,7 @@
                             <div class="captain-description">
                                 Captain
                             </div>
-                            <a href="https://sail-away.azurewebsites.net/user_profile?id=<?=$user->getId()?>" class="profile">
+                            <a href="http://20.16.165.177/user_profile?id=<?=$user->getId()?>" class="profile">
                                 <img src="<?=$user->getImage()?>">
                                 <?=$user->getNick() ?>
                             </a>
